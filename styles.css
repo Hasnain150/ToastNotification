@@ -1,0 +1,81 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+    overflow-x: hidden;
+}
+.div{
+    padding: 20px 40px;
+}
+.div button{
+    padding: 10px;
+    width: 120px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+
+}
+.notifications{
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    flex-direction: column;
+
+}
+.notifications p{
+    margin-top: 10px;
+    height: 60px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 10px;
+background-color: #FAF1E4;
+transform: translateX(100%);
+animation: moveLeft 1s linear forwards;
+}
+@keyframes moveLeft {
+    100%{
+        transform: translate(0%);
+    }
+}
+.notifications p::after{
+  content: "";
+  background-color: green;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  left :0;
+  bottom: 0;
+  animation: slide 4s forwards;
+}
+@keyframes slide {
+    100%{
+        width: 0%;
+    }
+    
+}
+.notifications p img{
+    height: 25px;
+    margin-right: 15px;
+}
+
+.notifications p.error::after{
+    background-color: red;
+}
+.notifications p.invalid::after{
+    background-color: orange;
+}
+@media screen and (max-width: 500px
+) {
+    .div button{
+        width: 100px;
+        font-size: 11px;
+    }
+    .notifications p{
+        font-size: 15px;
+        width: 320px;
+    }
+  
+}
